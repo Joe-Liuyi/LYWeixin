@@ -6,7 +6,6 @@ target 'LYWeiXin' do
   # use_frameworks!
 
   # Pods for LYWeiXin
-
 pod 'pop'
 pod 'SDWebImage'
 pod 'AFNetworking'

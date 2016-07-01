@@ -13,5 +13,18 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD+HM.h"
+#import "LYXMPPHelper.h"
+
+#define kAccount @"kAccount"
+#define kPassword @"kPassword"
+
+static NSString *LYXMPPLoginSuccessNotification = @"LYXMPPLoginSuccessNotification";
+
+#if DEBUG
+#define LYLog(...) NSLog(@"\n%s \n %@\n\n", __func__, [NSString stringWithFormat:__VA_ARGS__])
+#else
+
+#endif
 
 #endif /* PrefixHeader_pch */

@@ -31,6 +31,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="微信" id="wiL-9Z-iwW" userLabel="微信">
                         <barButtonItem key="leftBarButtonItem" title="登录" style="done" id="y7l-ma-sbp">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="login:" destination="fAo-kc-tot" id="Cwt-YW-8Cg"/>
                             </connections>
@@ -48,12 +49,8 @@
         <!--微信-->
         <scene sceneID="2bn-pS-6jm">
             <objects>
-                <navigationController id="Z8J-dL-doy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="微信" image="tabbar_mainframe" badgeValue="10" id="6O5-rg-SDK">
-                        <string key="selectedImage" base64-UTF8="YES">
-CHRhYmJhcl9tYWluZnJhbWVITA
-</string>
-                    </tabBarItem>
+                <navigationController id="Z8J-dL-doy" customClass="LYNavigationController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="微信" image="tabbar_mainframe" badgeValue="10" id="6O5-rg-SDK"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="GL3-9e-fMY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -265,7 +262,7 @@ COmAmuiur+W9lQ
         <!--发现-->
         <scene sceneID="HY5-8Z-seS">
             <objects>
-                <navigationController id="KFb-NJ-sDL" sceneMemberID="viewController">
+                <navigationController id="KFb-NJ-sDL" customClass="LYNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="发现" image="tabbar_discover" selectedImage="tabbar_discoverHL" id="hb4-VE-axk"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="jO3-N4-G5w">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -470,7 +467,7 @@ COmAmuiur+W9lQ
         <!--我-->
         <scene sceneID="gX4-BD-Gbk">
             <objects>
-                <navigationController id="RKr-Zb-il3" sceneMemberID="viewController">
+                <navigationController id="RKr-Zb-il3" customClass="LYNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="我" image="tabbar_contacts" selectedImage="tabbar_contactsHL" id="GC4-no-6qZ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="ek3-dm-UAq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -487,7 +484,7 @@ COmAmuiur+W9lQ
         <!--通讯录-->
         <scene sceneID="zyz-c8-dYa">
             <objects>
-                <navigationController id="TZW-Rg-3wD" sceneMemberID="viewController">
+                <navigationController id="TZW-Rg-3wD" customClass="LYNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="通讯录" image="tabbar_me" selectedImage="tabbar_meHL" id="wVI-D3-Rgh"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="5f8-rx-g5e">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -523,11 +520,6 @@ COmAmuiur+W9lQ
         </scene>
     </scenes>
     <resources>
-        <image width="150" height="150">
-            <string key="name" base64-UTF8="YES">
-CHRhYmJhcl9tYWluZnJhbWVITA
-</string>
-        </image>
         <image name="MoreExpressionShops" width="25" height="25"/>
         <image name="MoreGame" width="25" height="25"/>
         <image name="MoreMyAlbum" width="25" height="25"/>

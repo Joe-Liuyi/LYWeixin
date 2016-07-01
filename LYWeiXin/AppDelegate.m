@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+
+
 @interface AppDelegate ()
 
 @end
@@ -17,6 +19,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    NSString *storyboardName = [[LYXMPPHelper sharedManager] isLogin] ? @"Main" : @"Login";
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = [UIStoryboard storyboardWithName:storyboardName bundle:nil].instantiateInitialViewController;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

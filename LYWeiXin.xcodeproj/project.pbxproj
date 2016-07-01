@@ -9,11 +9,16 @@
 /* Begin PBXBuildFile section */
 		AB157A9E188DBC1EAEFC1F92 /* libPods-LYWeiXin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B441DE46F4B316F2CC1BBA2 /* libPods-LYWeiXin.a */; };
 		BFFF2AB5122F02FACA41E0D0 /* libPods-LYWeiXinTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59EBA286187E72EAAAA6DA9B /* libPods-LYWeiXinTests.a */; };
+		D862EE281D2673CE00A3F4FD /* LYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D862EE271D2673CE00A3F4FD /* LYNavigationController.m */; };
+		D862EE321D26778600A3F4FD /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D862EE291D26778600A3F4FD /* Login.storyboard */; };
+		D862EE331D26778600A3F4FD /* WCBaseLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D862EE2B1D26778600A3F4FD /* WCBaseLoginViewController.m */; };
+		D862EE361D26778600A3F4FD /* WCRegisgerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D862EE311D26778600A3F4FD /* WCRegisgerViewController.m */; };
+		D862EE391D26830100A3F4FD /* LYLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D862EE381D26830100A3F4FD /* LYLoginViewController.m */; };
+		D862EE3C1D26830E00A3F4FD /* LYOtherLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D862EE3B1D26830E00A3F4FD /* LYOtherLoginViewController.m */; };
+		D862EE3F1D26831D00A3F4FD /* LYRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D862EE3E1D26831D00A3F4FD /* LYRegisterViewController.m */; };
 		D8A04C1E1D260F3C00A7F637 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A04C1D1D260F3C00A7F637 /* main.m */; };
 		D8A04C211D260F3C00A7F637 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A04C201D260F3C00A7F637 /* AppDelegate.m */; };
 		D8A04C271D260F3C00A7F637 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8A04C251D260F3C00A7F637 /* Main.storyboard */; };
-		D8A04C291D260F3C00A7F637 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8A04C281D260F3C00A7F637 /* Assets.xcassets */; };
-		D8A04C2C1D260F3C00A7F637 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8A04C2A1D260F3C00A7F637 /* LaunchScreen.storyboard */; };
 		D8A04C371D260F3C00A7F637 /* LYWeiXinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A04C361D260F3C00A7F637 /* LYWeiXinTests.m */; };
 		D8A04C421D260F3C00A7F637 /* LYWeiXinUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A04C411D260F3C00A7F637 /* LYWeiXinUITests.m */; };
 		D8A04C521D261BF300A7F637 /* LYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A04C511D261BF300A7F637 /* LYTabBarController.m */; };
@@ -151,6 +156,11 @@
 		D8A04E341D262CA600A7F637 /* XMPPMessage+XEP_0308.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A04DD71D262CA600A7F637 /* XMPPMessage+XEP_0308.m */; };
 		D8A04E351D262CA600A7F637 /* XMPPMessage+XEP_0333.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A04DDA1D262CA600A7F637 /* XMPPMessage+XEP_0333.m */; };
 		D8A04E361D262CA600A7F637 /* NSXMLElement+XEP_0335.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A04DDD1D262CA600A7F637 /* NSXMLElement+XEP_0335.m */; };
+		D8A04E391D265C8A00A7F637 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8A04E381D265C8A00A7F637 /* Assets.xcassets */; };
+		D8A04E401D26660300A7F637 /* LYXMPPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A04E3F1D26660300A7F637 /* LYXMPPHelper.m */; };
+		D8A04E471D266C3100A7F637 /* MBProgressHUD+HM.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A04E431D266C3100A7F637 /* MBProgressHUD+HM.m */; };
+		D8A04E481D266C3100A7F637 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D8A04E441D266C3100A7F637 /* MBProgressHUD.bundle */; };
+		D8A04E491D266C3100A7F637 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A04E461D266C3100A7F637 /* MBProgressHUD.m */; };
 		F3BA673771E610C59C4458D7 /* libPods-LYWeiXinUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D603FFC213EE361C9445A25 /* libPods-LYWeiXinUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -180,13 +190,24 @@
 		8D603FFC213EE361C9445A25 /* libPods-LYWeiXinUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LYWeiXinUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB1765E9E615DC3477CF06E2 /* Pods-LYWeiXinUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYWeiXinUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LYWeiXinUITests/Pods-LYWeiXinUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D5EB5BEFD926D96D8E56236C /* Pods-LYWeiXinUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYWeiXinUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LYWeiXinUITests/Pods-LYWeiXinUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D862EE261D2673CE00A3F4FD /* LYNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYNavigationController.h; sourceTree = "<group>"; };
+		D862EE271D2673CE00A3F4FD /* LYNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYNavigationController.m; sourceTree = "<group>"; };
+		D862EE291D26778600A3F4FD /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		D862EE2A1D26778600A3F4FD /* WCBaseLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBaseLoginViewController.h; sourceTree = "<group>"; };
+		D862EE2B1D26778600A3F4FD /* WCBaseLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCBaseLoginViewController.m; sourceTree = "<group>"; };
+		D862EE301D26778600A3F4FD /* WCRegisgerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCRegisgerViewController.h; sourceTree = "<group>"; };
+		D862EE311D26778600A3F4FD /* WCRegisgerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCRegisgerViewController.m; sourceTree = "<group>"; };
+		D862EE371D26830100A3F4FD /* LYLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYLoginViewController.h; sourceTree = "<group>"; };
+		D862EE381D26830100A3F4FD /* LYLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYLoginViewController.m; sourceTree = "<group>"; };
+		D862EE3A1D26830E00A3F4FD /* LYOtherLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYOtherLoginViewController.h; sourceTree = "<group>"; };
+		D862EE3B1D26830E00A3F4FD /* LYOtherLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYOtherLoginViewController.m; sourceTree = "<group>"; };
+		D862EE3D1D26831D00A3F4FD /* LYRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYRegisterViewController.h; sourceTree = "<group>"; };
+		D862EE3E1D26831D00A3F4FD /* LYRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYRegisterViewController.m; sourceTree = "<group>"; };
 		D8A04C191D260F3C00A7F637 /* LYWeiXin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYWeiXin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A04C1D1D260F3C00A7F637 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D8A04C1F1D260F3C00A7F637 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D8A04C201D260F3C00A7F637 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D8A04C261D260F3C00A7F637 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D8A04C281D260F3C00A7F637 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D8A04C2B1D260F3C00A7F637 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8A04C2D1D260F3C00A7F637 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8A04C321D260F3C00A7F637 /* LYWeiXinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LYWeiXinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A04C361D260F3C00A7F637 /* LYWeiXinTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYWeiXinTests.m; sourceTree = "<group>"; };
@@ -472,6 +493,14 @@
 		D8A04DDC1D262CA600A7F637 /* NSXMLElement+XEP_0335.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSXMLElement+XEP_0335.h"; sourceTree = "<group>"; };
 		D8A04DDD1D262CA600A7F637 /* NSXMLElement+XEP_0335.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSXMLElement+XEP_0335.m"; sourceTree = "<group>"; };
 		D8A04E371D262CB900A7F637 /* XMPPFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPFramework.h; sourceTree = "<group>"; };
+		D8A04E381D265C8A00A7F637 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D8A04E3E1D26660300A7F637 /* LYXMPPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYXMPPHelper.h; sourceTree = "<group>"; };
+		D8A04E3F1D26660300A7F637 /* LYXMPPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYXMPPHelper.m; sourceTree = "<group>"; };
+		D8A04E421D266C3100A7F637 /* MBProgressHUD+HM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+HM.h"; sourceTree = "<group>"; };
+		D8A04E431D266C3100A7F637 /* MBProgressHUD+HM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+HM.m"; sourceTree = "<group>"; };
+		D8A04E441D266C3100A7F637 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		D8A04E451D266C3100A7F637 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		D8A04E461D266C3100A7F637 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		DC4B51888E74E18481A6612F /* Pods-LYWeiXin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYWeiXin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LYWeiXin/Pods-LYWeiXin.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -531,6 +560,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D862EE251D2673B900A3F4FD /* Ctrls */ = {
+			isa = PBXGroup;
+			children = (
+				D862EE261D2673CE00A3F4FD /* LYNavigationController.h */,
+				D862EE271D2673CE00A3F4FD /* LYNavigationController.m */,
+			);
+			path = Ctrls;
+			sourceTree = "<group>";
+		};
 		D8A04C101D260F3C00A7F637 = {
 			isa = PBXGroup;
 			children = (
@@ -561,9 +599,8 @@
 				D8A04C1F1D260F3C00A7F637 /* AppDelegate.h */,
 				D8A04C201D260F3C00A7F637 /* AppDelegate.m */,
 				D8A04C631D262A2D00A7F637 /* PrefixHeader.pch */,
+				D8A04E381D265C8A00A7F637 /* Assets.xcassets */,
 				D8A04C251D260F3C00A7F637 /* Main.storyboard */,
-				D8A04C281D260F3C00A7F637 /* Assets.xcassets */,
-				D8A04C2A1D260F3C00A7F637 /* LaunchScreen.storyboard */,
 				D8A04C2D1D260F3C00A7F637 /* Info.plist */,
 				D8A04C1C1D260F3C00A7F637 /* Supporting Files */,
 			);
@@ -601,6 +638,8 @@
 			children = (
 				D8A04C501D261BF300A7F637 /* LYTabBarController.h */,
 				D8A04C511D261BF300A7F637 /* LYTabBarController.m */,
+				D8A04E3D1D2665EF00A7F637 /* Public */,
+				D8A04E3A1D265DF900A7F637 /* Login */,
 				D8A04C551D261EC100A7F637 /* Home */,
 				D8A04C531D261EC100A7F637 /* Contacts */,
 				D8A04C541D261EC100A7F637 /* Discover */,
@@ -648,6 +687,7 @@
 		D8A04C641D262ABA00A7F637 /* Venders */ = {
 			isa = PBXGroup;
 			children = (
+				D8A04E411D266C3100A7F637 /* MBProgessHUD */,
 				D8A04C651D262B0A00A7F637 /* XMPP */,
 			);
 			path = Venders;
@@ -1437,6 +1477,46 @@
 			path = "XEP-0335";
 			sourceTree = "<group>";
 		};
+		D8A04E3A1D265DF900A7F637 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D862EE291D26778600A3F4FD /* Login.storyboard */,
+				D862EE2A1D26778600A3F4FD /* WCBaseLoginViewController.h */,
+				D862EE2B1D26778600A3F4FD /* WCBaseLoginViewController.m */,
+				D862EE301D26778600A3F4FD /* WCRegisgerViewController.h */,
+				D862EE311D26778600A3F4FD /* WCRegisgerViewController.m */,
+				D862EE371D26830100A3F4FD /* LYLoginViewController.h */,
+				D862EE381D26830100A3F4FD /* LYLoginViewController.m */,
+				D862EE3A1D26830E00A3F4FD /* LYOtherLoginViewController.h */,
+				D862EE3B1D26830E00A3F4FD /* LYOtherLoginViewController.m */,
+				D862EE3D1D26831D00A3F4FD /* LYRegisterViewController.h */,
+				D862EE3E1D26831D00A3F4FD /* LYRegisterViewController.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		D8A04E3D1D2665EF00A7F637 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				D862EE251D2673B900A3F4FD /* Ctrls */,
+				D8A04E3E1D26660300A7F637 /* LYXMPPHelper.h */,
+				D8A04E3F1D26660300A7F637 /* LYXMPPHelper.m */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		D8A04E411D266C3100A7F637 /* MBProgessHUD */ = {
+			isa = PBXGroup;
+			children = (
+				D8A04E421D266C3100A7F637 /* MBProgressHUD+HM.h */,
+				D8A04E431D266C3100A7F637 /* MBProgressHUD+HM.m */,
+				D8A04E441D266C3100A7F637 /* MBProgressHUD.bundle */,
+				D8A04E451D266C3100A7F637 /* MBProgressHUD.h */,
+				D8A04E461D266C3100A7F637 /* MBProgressHUD.m */,
+			);
+			path = MBProgessHUD;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1552,10 +1632,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8A04C9B1D262B0A00A7F637 /* build-libidn.sh in Resources */,
-				D8A04C2C1D260F3C00A7F637 /* LaunchScreen.storyboard in Resources */,
-				D8A04C291D260F3C00A7F637 /* Assets.xcassets in Resources */,
 				D8A04C961D262B0A00A7F637 /* README.txt in Resources */,
+				D862EE321D26778600A3F4FD /* Login.storyboard in Resources */,
+				D8A04E391D265C8A00A7F637 /* Assets.xcassets in Resources */,
 				D8A04C271D260F3C00A7F637 /* Main.storyboard in Resources */,
+				D8A04E481D266C3100A7F637 /* MBProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1723,6 +1804,7 @@
 				D8A04CED1D262C5C00A7F637 /* XMPPPlainAuthentication.m in Sources */,
 				D8A04E061D262CA600A7F637 /* XMPPvCardTemp.m in Sources */,
 				D8A04CBD1D262C2D00A7F637 /* XMPPElement.m in Sources */,
+				D862EE281D2673CE00A3F4FD /* LYNavigationController.m in Sources */,
 				D8A04DF21D262CA600A7F637 /* XMPPPrivacy.m in Sources */,
 				D8A04E301D262CA600A7F637 /* XEP_0223.m in Sources */,
 				D8A04CC41D262C2D00A7F637 /* XMPPStream.m in Sources */,
@@ -1752,6 +1834,7 @@
 				D8A04DF71D262CA600A7F637 /* XMPPRoomHybrid.xcdatamodeld in Sources */,
 				D8A04DF61D262CA600A7F637 /* XMPPRoomOccupantCoreDataStorageObject.m in Sources */,
 				D8A04C981D262B0A00A7F637 /* DDXMLDocument.m in Sources */,
+				D862EE3C1D26830E00A3F4FD /* LYOtherLoginViewController.m in Sources */,
 				D8A04DE01D262CA600A7F637 /* XMPPGoogleSharedStatus.m in Sources */,
 				D8A04DFA1D262CA600A7F637 /* XMPPRoomOccupantHybridMemoryStorageObject.m in Sources */,
 				D8A04E1A1D262CA600A7F637 /* NSString+XEP_0106.m in Sources */,
@@ -1770,6 +1853,7 @@
 				D8A04DEA1D262CA600A7F637 /* XMPPUserMemoryStorageObject.m in Sources */,
 				D8A04E231D262CA600A7F637 /* XMPPMessageArchivingCoreDataStorage.m in Sources */,
 				D8A04E131D262CA600A7F637 /* XMPPIQ+XEP_0066.m in Sources */,
+				D8A04E491D266C3100A7F637 /* MBProgressHUD.m in Sources */,
 				D8A04CE91D262C5C00A7F637 /* XMPPAnonymousAuthentication.m in Sources */,
 				D8A04DE31D262CA600A7F637 /* XMPPGroupCoreDataStorageObject.m in Sources */,
 				D8A04E281D262CA600A7F637 /* XMPPMessage+XEP_0184.m in Sources */,
@@ -1783,6 +1867,7 @@
 				D8A04C971D262B0A00A7F637 /* NSString+DDXML.m in Sources */,
 				D8A04E251D262CA600A7F637 /* XMPPvCardAvatarModule.m in Sources */,
 				D8A04C931D262B0A00A7F637 /* DDTTYLogger.m in Sources */,
+				D862EE361D26778600A3F4FD /* WCRegisgerViewController.m in Sources */,
 				D8A04DE71D262CA600A7F637 /* XMPPUserCoreDataStorageObject.m in Sources */,
 				D8A04E2C1D262CA600A7F637 /* XMPPPing.m in Sources */,
 				D8A04CF21D262C5C00A7F637 /* RFImageToDataTransformer.m in Sources */,
@@ -1790,10 +1875,13 @@
 				D8A04CF11D262C5C00A7F637 /* GCDMulticastDelegate.m in Sources */,
 				D8A04E091D262CA600A7F637 /* XMPPvCardTempBase.m in Sources */,
 				D8A04E151D262CA600A7F637 /* NSDate+XMPPDateTimeProfiles.m in Sources */,
+				D862EE3F1D26831D00A3F4FD /* LYRegisterViewController.m in Sources */,
 				D8A04E341D262CA600A7F637 /* XMPPMessage+XEP_0308.m in Sources */,
+				D8A04E471D266C3100A7F637 /* MBProgressHUD+HM.m in Sources */,
 				D8A04E261D262CA600A7F637 /* XMPPMessage+XEP_0172.m in Sources */,
 				D8A04E0D1D262CA600A7F637 /* XMPPvCardTempTel.m in Sources */,
 				D8A04DF91D262CA600A7F637 /* XMPPRoomMessageHybridCoreDataStorageObject.m in Sources */,
+				D862EE391D26830100A3F4FD /* LYLoginViewController.m in Sources */,
 				D8A04CA51D262B2800A7F637 /* NSNumber+XMPP.m in Sources */,
 				D8A04E141D262CA600A7F637 /* XMPPMessage+XEP_0066.m in Sources */,
 				D8A04DF11D262CA600A7F637 /* XMPPLastActivity.m in Sources */,
@@ -1805,12 +1893,14 @@
 				D8A04E071D262CA600A7F637 /* XMPPvCardTempAdr.m in Sources */,
 				D8A04CF51D262C5C00A7F637 /* XMPPStringPrep.m in Sources */,
 				D8A04E2E1D262CA600A7F637 /* XMPPTime.m in Sources */,
+				D8A04E401D26660300A7F637 /* LYXMPPHelper.m in Sources */,
 				D8A04E051D262CA600A7F637 /* XMPPvCardTempCoreDataStorageObject.m in Sources */,
 				D8A04E2D1D262CA600A7F637 /* XMPPAutoTime.m in Sources */,
 				D8A04E361D262CA600A7F637 /* NSXMLElement+XEP_0335.m in Sources */,
 				D8A04E011D262CA600A7F637 /* XMPPvCard.xcdatamodeld in Sources */,
 				D8A04C5F1D261F2100A7F637 /* LYHomeViewController.m in Sources */,
 				D8A04E161D262CA600A7F637 /* XMPPDateTimeProfiles.m in Sources */,
+				D862EE331D26778600A3F4FD /* WCBaseLoginViewController.m in Sources */,
 				D8A04DF41D262CA600A7F637 /* XMPPRoomCoreDataStorage.m in Sources */,
 				D8A04CBF1D262C2D00A7F637 /* XMPPJID.m in Sources */,
 				D8A04E1B1D262CA600A7F637 /* XMPPCapabilities.xcdatamodel in Sources */,
@@ -1876,14 +1966,6 @@
 				D8A04C261D260F3C00A7F637 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		D8A04C2A1D260F3C00A7F637 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D8A04C2B1D260F3C00A7F637 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1978,6 +2060,7 @@
 			baseConfigurationReference = DC4B51888E74E18481A6612F /* Pods-LYWeiXin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LYWeiXin/PrefixHeader.pch;
@@ -2025,6 +2108,7 @@
 			baseConfigurationReference = 48A42AA0101F088536EAAD2D /* Pods-LYWeiXin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LYWeiXin/PrefixHeader.pch;
