@@ -25,6 +25,12 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldTextDidChange:) name:UITextFieldTextDidChangeNotification object:_pwdField];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    _userLabel.text = [LYXMPPHelper sharedManager].account;
+}
+
 - (void)textFieldTextDidChange:(NSNotification *)noti {
     _loginBtn.enabled = ![_pwdField.text isEqualToString:@""];
 }

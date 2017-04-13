@@ -15,11 +15,15 @@
 #import <UIKit/UIKit.h>
 #import "MBProgressHUD+HM.h"
 #import "LYXMPPHelper.h"
+#import "XMPPFramework.h" 
+#import "UIImageView+WebCache.h"
 
 #define kAccount @"kAccount"
 #define kPassword @"kPassword"
 
 static NSString *LYXMPPLoginSuccessNotification = @"LYXMPPLoginSuccessNotification";
+
+#define LY_iOS8 ([[UIDevice currentDevice].systemVersion doubleValue] >= 8.0)
 
 #if DEBUG
 #define LYLog(...) NSLog(@"\n%s \n %@\n\n", __func__, [NSString stringWithFormat:__VA_ARGS__])

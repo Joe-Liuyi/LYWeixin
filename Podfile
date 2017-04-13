@@ -6,9 +6,10 @@ target 'LYWeiXin' do
   # use_frameworks!
 
   # Pods for LYWeiXin
-pod 'pop'
-pod 'SDWebImage'
-pod 'AFNetworking'
+  pod 'pop'
+  pod 'SDWebImage'
+  pod 'AFNetworking'
+  pod 'LYActionSheet'
 
   target 'LYWeiXinTests' do
     inherit! :search_paths

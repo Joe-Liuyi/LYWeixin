@@ -15,7 +15,7 @@
 @implementation LYNavigationController
 
 + (void)initialize {
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"topbarbg_ios7"] forBarMetrics:UIBarMetricsDefault];;
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"topbarbg_ios7"] forBarMetrics:UIBarMetricsDefault]; // banner_nav_bg
 }
 
 @end

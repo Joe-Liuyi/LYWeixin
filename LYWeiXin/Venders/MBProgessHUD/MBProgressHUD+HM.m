@@ -57,7 +57,7 @@
 
 + (void)showError:(NSString *)error
 {
-    [self showError:error toView:nil];
+    [self showError:error toView:[[UIApplication sharedApplication] delegate].window];
 }
 
 + (MBProgressHUD *)showMessage:(NSString *)message

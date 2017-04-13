@@ -30,12 +30,19 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 //#define LYLogFunc NSLog(@"%s\t\t\t\t%d", __func__, [NSThread currentThread].isMainThread);
 
 #define kDomain @"liuyi.local"
-#define kHostName @"127.0.0.1"
+//#define kHostName @"127.0.0.1"
+#define kHostName @"192.168.1.103"
 #define kHostPort 5222
 
-@interface LYXMPPHelper () <XMPPStreamDelegate> 
-@property (nonatomic, strong) XMPPStream *xmppStream;
+@interface LYXMPPHelper () <XMPPStreamDelegate>
+@property (nonatomic, copy) NSString *registerAccount;
+@property (nonatomic, copy) NSString *registerPassword;
+@property (nonatomic, assign) BOOL isRegister;
 @property (nonatomic, copy) void(^loginBlock)(LYXMPPStatus status);
+@property (nonatomic, copy) void(^registerBlock)(LYXMPPStatus status);
+@property (nonatomic, strong) XMPPStream *xmppStream;
+@property (nonatomic, strong) XMPPvCardCoreDataStorage *vCardStorage;
+@property (nonatomic, strong) XMPPvCardAvatarModule *avatar;
 @end
 
 @implementation LYXMPPHelper
@@ -53,6 +60,8 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
         [self setupXMPPStream];
         _account = [[NSUserDefaults standardUserDefaults] stringForKey:kAccount];
         _password = [[NSUserDefaults standardUserDefaults] stringForKey:kPassword];
+        [DDLog addLogger:[DDTTYLogger sharedInstance]];
+        [DDTTYLogger sharedInstance].colorsEnabled = YES;
     }
     return self;
 }
@@ -65,14 +74,28 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
     if (!account || !password) {
         return;
     }
+    _isRegister = NO;
     _loginBlock = block;
     _account = account;
     _password = password;
     [self connectToHost];
 }
 
-- (void)loginOut {
+- (void)registerWithAccount:(NSString *)account password:(NSString *)password completed:(void(^)(LYXMPPStatus status))block {
+    if (!account || !password) {
+        return;
+    }
+    _isRegister = YES;
+    _registerAccount = account;
+    _registerBlock = block;
     _account = nil;
+    _password = nil;
+    _registerPassword = password;
+    [self connectToHost];
+}
+
+- (void)loginOut {
+//    _account = nil;
     _password = nil;
 //    [[NSUserDefaults standardUserDefaults] removeObjectForKey:kAccount];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:kPassword];
@@ -100,17 +123,28 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
     _xmppStream.enableBackgroundingOnSocket = YES;
     _xmppStream.hostName = kHostName;
     _xmppStream.hostPort = kHostPort;
+    
+    // 添加电子名片模块
+    _vCardStorage = [XMPPvCardCoreDataStorage sharedInstance];
+    _vCard = [[XMPPvCardTempModule alloc] initWithvCardStorage:_vCardStorage];
+    [_vCard activate:_xmppStream];
+    
+    // 添加头像模块
+    _avatar = [[XMPPvCardAvatarModule alloc] initWithvCardTempModule:_vCard];
+    [_avatar activate:_xmppStream];
 }
 
 
 // 2.连接到服务器
 - (void)connectToHost {
-    if (![_xmppStream isDisconnected]) {
-        LYLog(@"已经连接");
-        return;
-    }
+//    if (![_xmppStream isDisconnected]) {
+//        LYLog(@"已经连接");
+//        return;
+//    }
+    [_xmppStream disconnect];
     
-    [_xmppStream setMyJID:[XMPPJID jidWithUser:_account domain:kDomain resource:@"iOS"]];
+    NSString *account = _isRegister ? _registerAccount : _account;
+    [_xmppStream setMyJID:[XMPPJID jidWithUser:account domain:kDomain resource:@"iOS"]];
     
     NSError *error = nil;
     if (![_xmppStream connectWithTimeout:XMPPStreamTimeoutNone error:&error]) {
@@ -129,8 +163,14 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 // 3.连接到服务成功后，再发送密码授权
 - (void)sendPwdToHost {
     NSError *error = nil;
-    if (![_xmppStream authenticateWithPassword:_password error:&error]) {
-        DDLogError(@"Error authenticating: %@", error);
+    if (_isRegister) { // 注册
+        if (![_xmppStream registerWithPassword:_registerPassword error:&error]) {
+            DDLogError(@"Error authenticating: %@", error);
+        }
+    } else {
+        if (![_xmppStream authenticateWithPassword:_password error:&error]) {
+            DDLogError(@"Error authenticating: %@", error);
+        }
     }
 }
 
@@ -177,6 +217,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 - (void)xmppStream:(XMPPStream *)sender socketDidConnect:(GCDAsyncSocket *)socket {
     LYLog(@"");
 }
+
 /**
  * This method is called after a TCP connection has been established with the server,
  * and the opening XML stream negotiation has started.
@@ -184,6 +225,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 - (void)xmppStreamDidStartNegotiation:(XMPPStream *)sender {
     LYLog(@"");
 }
+
 /**
  * This method is called immediately prior to the stream being secured via TLS/SSL.
  * Note that this delegate may be called even if you do not explicitly invoke the startTLS method.
@@ -223,6 +265,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 - (void)xmppStream:(XMPPStream *)sender willSecureWithSettings:(NSMutableDictionary *)settings {
     LYLog(@"");
 }
+
 /**
  * This method is called after the stream has been secured via SSL/TLS.
  * This method may be called if the server required a secure connection during the opening process,
@@ -231,6 +274,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 - (void)xmppStreamDidSecure:(XMPPStream *)sender {
     LYLog(@"");
 }
+
 /**
  * This method is called after the XML stream has been fully opened.
  * More precisely, this method is called after an opening <xml/> and <stream:stream/> tag have been sent and received,
@@ -242,19 +286,31 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
     
     [self sendPwdToHost];
 }
+
 /**
  * This method is called after registration of a new user has successfully finished.
  * If registration fails for some reason, the xmppStream:didNotRegister: method will be called instead.
  **/
 - (void)xmppStreamDidRegister:(XMPPStream *)sender {
-    LYLog(@"");
+    LYLog(@"注册成功");
+    _account = _registerAccount;
+    [[NSUserDefaults standardUserDefaults] setObject:_account forKey:kAccount];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (_registerBlock) _registerBlock(LYXMPPStatusRegisterSuccess);
+    });
 }
+
 /**
  * This method is called if registration fails.
  **/
 - (void)xmppStream:(XMPPStream *)sender didNotRegister:(NSXMLElement *)error {
-    LYLog(@"");
+    LYLog(@"注册失败");
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (_registerBlock) _registerBlock(LYXMPPStatusRegisterAccountExist);
+    });
 }
+
 /**
  * This method is called after authentication has successfully finished.
  * If authentication fails for some reason, the xmppStream:didNotAuthenticate: method will be called instead.
@@ -279,6 +335,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
         if (_loginBlock) _loginBlock(LYXMPPStatusLoginError);
     });
 }
+
 /**
  * This method is called if the XMPP server doesn't allow our resource of choice
  * because it conflicts with an existing resource.
@@ -288,6 +345,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 //- (NSString *)xmppStream:(XMPPStream *)sender alternativeResourceForConflictingResource:(NSString *)conflictingResource {
 //
 //}
+
 /**
  * These methods are called before their respective XML elements are broadcast as received to the rest of the stack.
  * These methods can be used to modify elements on the fly.
@@ -440,9 +498,11 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
  * - Error parsing xml sent from server.
  **/
 - (void)xmppStreamDidDisconnect:(XMPPStream *)sender withError:(NSError *)error {
-    if (error && _loginBlock) {
-        _loginBlock(LYXMPPStatusLoginTimeOut);
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (error && _loginBlock) {
+            _loginBlock(LYXMPPStatusLoginTimeOut);
+        }
+    });
     LYLog(@"断开连接");
 }
 

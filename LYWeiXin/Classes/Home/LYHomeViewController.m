@@ -8,6 +8,7 @@
 
 #import "LYHomeViewController.h"
 #import "LYXMPPHelper.h"
+#import "LYActionSheet.h"
 
  
 @interface LYHomeViewController ()  
@@ -21,23 +22,23 @@
     [super viewDidLoad];
     _loginBtn.title = [[LYXMPPHelper sharedManager] isLogin] ? @"断开" : @"登陆";
     
-    _loadingTitleView = [[UIView alloc] initWithFrame:CGRectMake(0, 100, 114, 44)];
-    [self.view addSubview:_loadingTitleView];
-    
-    UIActivityIndicatorView *activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-    activityView.frame = CGRectMake(0, 0, 44, 44);
-    [activityView startAnimating];
-    [_loadingTitleView addSubview:activityView];
-    
-    UILabel *loadingLabel = [[UILabel alloc] initWithFrame:CGRectMake(44, 0, 70, 44)];
-    loadingLabel.text = @"loading";
-    loadingLabel.font = [UIFont systemFontOfSize:16.0];
-    loadingLabel.textColor = [UIColor whiteColor];
-    [_loadingTitleView addSubview:loadingLabel]; 
-    
-    self.navigationItem.titleView = _loadingTitleView;
-    
     if (![LYXMPPHelper sharedManager].isConnect) {
+        _loadingTitleView = [[UIView alloc] initWithFrame:CGRectMake(0, 100, 114, 44)];
+        [self.view addSubview:_loadingTitleView];
+        
+        UIActivityIndicatorView *activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+        activityView.frame = CGRectMake(0, 0, 44, 44);
+        [activityView startAnimating];
+        [_loadingTitleView addSubview:activityView];
+        
+        UILabel *loadingLabel = [[UILabel alloc] initWithFrame:CGRectMake(44, 0, 70, 44)];
+        loadingLabel.text = @"loading";
+        loadingLabel.font = [UIFont systemFontOfSize:16.0];
+        loadingLabel.textColor = [UIColor whiteColor];
+        [_loadingTitleView addSubview:loadingLabel];
+        
+        self.navigationItem.titleView = _loadingTitleView;
+        
         [[LYXMPPHelper sharedManager] loginWithCompleted:^(LYXMPPStatus status) {
             switch (status) {
                 case LYXMPPStatusLoginSuccess:
@@ -70,22 +71,22 @@
 
 
 #pragma mark - UITableViewDelegate
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return 10;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-
-    // Configure the cell...
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+    }
 
     return cell;
 }
-*/
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    LYActionSheet *sheet = [[LYActionSheet alloc] initWithTitle:@"是否删除该条消息?"cancelButtonTitle:@"取消" destructiveButtonTitle:@"没红色图" otherButtonTitles:@"拍照" ,@"从手机相册选择", @"保存图片",  nil];
+    [sheet showWithClickedButtonAtIndex:nil cancel:nil];
+}
 
 @end

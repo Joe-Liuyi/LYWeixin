@@ -12,7 +12,6 @@
 		D862EE281D2673CE00A3F4FD /* LYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D862EE271D2673CE00A3F4FD /* LYNavigationController.m */; };
 		D862EE321D26778600A3F4FD /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D862EE291D26778600A3F4FD /* Login.storyboard */; };
 		D862EE331D26778600A3F4FD /* WCBaseLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D862EE2B1D26778600A3F4FD /* WCBaseLoginViewController.m */; };
-		D862EE361D26778600A3F4FD /* WCRegisgerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D862EE311D26778600A3F4FD /* WCRegisgerViewController.m */; };
 		D862EE391D26830100A3F4FD /* LYLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D862EE381D26830100A3F4FD /* LYLoginViewController.m */; };
 		D862EE3C1D26830E00A3F4FD /* LYOtherLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D862EE3B1D26830E00A3F4FD /* LYOtherLoginViewController.m */; };
 		D862EE3F1D26831D00A3F4FD /* LYRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D862EE3E1D26831D00A3F4FD /* LYRegisterViewController.m */; };
@@ -161,6 +160,7 @@
 		D8A04E471D266C3100A7F637 /* MBProgressHUD+HM.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A04E431D266C3100A7F637 /* MBProgressHUD+HM.m */; };
 		D8A04E481D266C3100A7F637 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D8A04E441D266C3100A7F637 /* MBProgressHUD.bundle */; };
 		D8A04E491D266C3100A7F637 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A04E461D266C3100A7F637 /* MBProgressHUD.m */; };
+		D8F9DB801D277637006F4D2C /* LYProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F9DB7F1D277637006F4D2C /* LYProfileViewController.m */; };
 		F3BA673771E610C59C4458D7 /* libPods-LYWeiXinUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D603FFC213EE361C9445A25 /* libPods-LYWeiXinUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -195,8 +195,6 @@
 		D862EE291D26778600A3F4FD /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		D862EE2A1D26778600A3F4FD /* WCBaseLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBaseLoginViewController.h; sourceTree = "<group>"; };
 		D862EE2B1D26778600A3F4FD /* WCBaseLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCBaseLoginViewController.m; sourceTree = "<group>"; };
-		D862EE301D26778600A3F4FD /* WCRegisgerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCRegisgerViewController.h; sourceTree = "<group>"; };
-		D862EE311D26778600A3F4FD /* WCRegisgerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCRegisgerViewController.m; sourceTree = "<group>"; };
 		D862EE371D26830100A3F4FD /* LYLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYLoginViewController.h; sourceTree = "<group>"; };
 		D862EE381D26830100A3F4FD /* LYLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYLoginViewController.m; sourceTree = "<group>"; };
 		D862EE3A1D26830E00A3F4FD /* LYOtherLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYOtherLoginViewController.h; sourceTree = "<group>"; };
@@ -501,6 +499,8 @@
 		D8A04E441D266C3100A7F637 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
 		D8A04E451D266C3100A7F637 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		D8A04E461D266C3100A7F637 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		D8F9DB7E1D277637006F4D2C /* LYProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYProfileViewController.h; sourceTree = "<group>"; };
+		D8F9DB7F1D277637006F4D2C /* LYProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYProfileViewController.m; sourceTree = "<group>"; };
 		DC4B51888E74E18481A6612F /* Pods-LYWeiXin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYWeiXin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LYWeiXin/Pods-LYWeiXin.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -678,6 +678,7 @@
 		D8A04C561D261EC100A7F637 /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				D8F9DB7D1D277623006F4D2C /* Profile */,
 				D8A04C601D261F3500A7F637 /* LYMeViewController.h */,
 				D8A04C611D261F3500A7F637 /* LYMeViewController.m */,
 			);
@@ -1483,8 +1484,6 @@
 				D862EE291D26778600A3F4FD /* Login.storyboard */,
 				D862EE2A1D26778600A3F4FD /* WCBaseLoginViewController.h */,
 				D862EE2B1D26778600A3F4FD /* WCBaseLoginViewController.m */,
-				D862EE301D26778600A3F4FD /* WCRegisgerViewController.h */,
-				D862EE311D26778600A3F4FD /* WCRegisgerViewController.m */,
 				D862EE371D26830100A3F4FD /* LYLoginViewController.h */,
 				D862EE381D26830100A3F4FD /* LYLoginViewController.m */,
 				D862EE3A1D26830E00A3F4FD /* LYOtherLoginViewController.h */,
@@ -1498,6 +1497,7 @@
 		D8A04E3D1D2665EF00A7F637 /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				D8F9DBF01D2A64D9006F4D2C /* Views */,
 				D862EE251D2673B900A3F4FD /* Ctrls */,
 				D8A04E3E1D26660300A7F637 /* LYXMPPHelper.h */,
 				D8A04E3F1D26660300A7F637 /* LYXMPPHelper.m */,
@@ -1515,6 +1515,22 @@
 				D8A04E461D266C3100A7F637 /* MBProgressHUD.m */,
 			);
 			path = MBProgessHUD;
+			sourceTree = "<group>";
+		};
+		D8F9DB7D1D277623006F4D2C /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D8F9DB7E1D277637006F4D2C /* LYProfileViewController.h */,
+				D8F9DB7F1D277637006F4D2C /* LYProfileViewController.m */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		D8F9DBF01D2A64D9006F4D2C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1795,6 +1811,7 @@
 				D8A04E271D262CA600A7F637 /* XMPPPresence+XEP_0172.m in Sources */,
 				D8A04DEF1D262CA600A7F637 /* XMPPJabberRPCModule.m in Sources */,
 				D8A04DDE1D262CA600A7F637 /* XMPPBandwidthMonitor.m in Sources */,
+				D8F9DB801D277637006F4D2C /* LYProfileViewController.m in Sources */,
 				D8A04E1C1D262CA600A7F637 /* XMPPCapabilitiesCoreDataStorage.m in Sources */,
 				D8A04E001D262CA600A7F637 /* XMPPRoom.m in Sources */,
 				D8A04CF01D262C5C00A7F637 /* DDList.m in Sources */,
@@ -1867,7 +1884,6 @@
 				D8A04C971D262B0A00A7F637 /* NSString+DDXML.m in Sources */,
 				D8A04E251D262CA600A7F637 /* XMPPvCardAvatarModule.m in Sources */,
 				D8A04C931D262B0A00A7F637 /* DDTTYLogger.m in Sources */,
-				D862EE361D26778600A3F4FD /* WCRegisgerViewController.m in Sources */,
 				D8A04DE71D262CA600A7F637 /* XMPPUserCoreDataStorageObject.m in Sources */,
 				D8A04E2C1D262CA600A7F637 /* XMPPPing.m in Sources */,
 				D8A04CF21D262C5C00A7F637 /* RFImageToDataTransformer.m in Sources */,
